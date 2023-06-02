@@ -9,7 +9,7 @@ function Footer() {
           class="font-semibold text-white "
           href="https://tailwind-elements.com/"
         >
-          Gallery Product
+          Gallery Art
         </a>
       </div>
     </footer>
