@@ -1,7 +1,8 @@
+import Layout from "../components/Layout";
+import Footer from "../components/Footer";
+
 function App() {
-  return (
-    <p className="text-4xl font-bold text-center underline">Hello world!</p>
-  );
+  return <Layout></Layout>;
 }
 
 export default App;
