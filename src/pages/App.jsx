@@ -47,6 +47,7 @@ function App() {
         <button className="w-32 h-8 bg-rose-700 rounded-full text-white hover:bg-rose-300">
           Search
         </button>
+
         <div className="flex justify-center absolute inset-x-0 bottom-0 text-white  hover:text-rose-300 ">
           {slides.map((slide, slideIndex) => (
             <div
@@ -68,22 +69,32 @@ function App() {
           ))}
         </div>
       </div>
-      <div className="bg-black min-h-screen ">
-        <p className="font-bold text-white text-4xl">see other pictures</p>
+
+      <div className="bg-sea min-h-screen bg-fixed bg-no-repeat bg-cover flex flex-row ">
+        <div className="w-1/2 bg-black text-white grid justify-items-center content-center  ">
+          <div className="flex-col w-3/5  ">
+            <h1 className="text-7xl font-bold mb-10">
+              We can help you make great photos!
+            </h1>
+            <p className="text-lg">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Consequuntur, aliquam quisquam error repudiandae earum accusantium
+              facere facilis ea perspiciatis nemo quasi optio sit voluptatibus
+              eaque, doloremque aut minima tenetur reprehenderit.
+            </p>
+          </div>
+        </div>
+        <div className="w-1/2 "></div>
+      </div>
+      <div className="bg-white min-h-screen p-10 ">
+        <p className="font-bold text-black text-4xl mb-8">see other pictures</p>
+
         <div className="grid lg:grid-cols-4 gap-6 justify-items-center md:grid-cols-2 sm:grid-cols-1">
           {images.map((item) => (
-            <Card key={item.id} url={item.url} />
+            <Card key={item.id} url={item.url} className="" />
           ))}
         </div>
       </div>
-      {/* <div className="bg-white min-h-screen bg-fixed bg-no-repeat bg-cover">
-        <p className="font-bold text-black text-4xl">Populer Images</p>
-        <div className="grid grid-cols-4">
-          {images.map((item) => (
-            <Card key={item.id} url={item.url} />
-          ))}
-        </div>
-      </div> */}
     </Layout>
   );
 }
