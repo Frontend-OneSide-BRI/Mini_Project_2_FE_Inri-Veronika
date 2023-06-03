@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [navbar, setNavbar] = useState(false);
@@ -7,9 +8,9 @@ function Navbar() {
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <a href="#">
+            <Link to={"/"}>
               <h2 className="text-2xl font-bold text-white">Gallery Art</h2>
-            </a>
+            </Link>
             <div className="md:hidden">
               <button
                 className="p-2 text-white rounded-md outline-none focus:border-gray-400 focus:border"
@@ -56,10 +57,14 @@ function Navbar() {
           >
             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
               <li className="text-white hover:text-rose-600">
-                <a href="#">Home</a>
+                <Link to={"/"}>
+                  <p>Home</p>
+                </Link>
               </li>
               <li className="text-white hover:text-rose-600">
-                <a href="#">Gallery</a>
+                <Link to={"/gallery"}>
+                  <p>Gallery</p>
+                </Link>
               </li>
               <li className="text-white hover:text-rose-600">
                 <a href="#">About </a>
