@@ -1,9 +1,10 @@
-import React, { useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
+import React, { useState } from "react";
 import { RxDotFilled } from "react-icons/rx";
 
 import Layout from "../components/Layout";
 import Card from "../components/Card";
+
 import { images } from "../utils/data";
 import { slides } from "../utils/data";
 
