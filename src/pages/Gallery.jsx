@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import Layout from "../components/Layout";
+import Footer from "../components/Footer";
 
 import { images } from "../utils/data";
 
@@ -58,22 +59,57 @@ function Gallery() {
         <div className="m-10">
           <input
             id="searchInput"
-            className="border-2 border-gray-300 w-full h-10 rounded-lg"
+            className="border-2 border-[#FDB827] w-full h-10 rounded-lg"
             type="text"
-            placeholder="seacrh here.."
+            placeholder=" seacrh here.."
             onChange={(event) => {
               setSearch(event.target.value);
             }}
           />
         </div>
-        <div className="flex flex-row gap-6 mx-10">
-          <button onClick={allItem}>All</button>
-          <button onClick={() => animal("animal")}>Animal</button>
-          <button onClick={() => art("art")}>Art</button>
-          <button onClick={() => women("women")}>Women</button>
-          <button onClick={() => flower("flower")}>Flower</button>
-          <button onClick={() => film("film")}>Film</button>
-          <button onClick={() => nature("nature")}>Nature</button>
+        <div className="grid lg:grid-cols-7 gap-6 mx-10 justify-around  justify-items-center md:grid-cols-2 sm:grid-cols-1">
+          <button
+            onClick={allItem}
+            className="border-solid border-2 border-[#FDB827] w-40 h-10 rounded-full hover:border-[#CF7500] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+          >
+            All
+          </button>
+          <button
+            className="border-solid border-2 border-[#FDB827] w-40 h-10 rounded-full hover:border-[#CF7500] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+            onClick={() => animal("animal")}
+          >
+            Animal
+          </button>
+          <button
+            className="border-solid border-2 border-[#FDB827] w-40 h-10 rounded-full hover:border-[#CF7500] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+            onClick={() => art("art")}
+          >
+            Art
+          </button>
+          <button
+            className="border-solid border-2 border-[#FDB827] w-40 h-10 rounded-full hover:border-[#CF7500] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+            onClick={() => women("women")}
+          >
+            Women
+          </button>
+          <button
+            className="border-solid border-2 border-[#FDB827] w-40 h-10 rounded-full hover:border-[#CF7500] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+            onClick={() => flower("flower")}
+          >
+            Flower
+          </button>
+          <button
+            className="border-solid border-2 border-[#FDB827] w-40 h-10 rounded-full hover:border-[#CF7500] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+            onClick={() => film("film")}
+          >
+            Film
+          </button>
+          <button
+            className="border-solid border-2 border-[#FDB827] w-40 h-10 rounded-full hover:border-[#CF7500] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+            onClick={() => nature("nature")}
+          >
+            Nature
+          </button>
         </div>
         <div className="grid lg:grid-cols-4 justify-items-center md:grid-cols-2 sm:grid-cols-1 gap-6 m-10 ">
           {filter
@@ -90,23 +126,13 @@ function Gallery() {
               return (
                 <div className="">
                   <img src={item.url} alt="" className="rounded-lg w-80 h-72" />
-                  <h3>{item.name}</h3>
+                  <h3 className="text-lg font-semibold">{item.name}</h3>
                 </div>
               );
             })}
         </div>
       </div>
-      {/* <div className="container">
-        <div className="grid lg:grid-cols-4 gap-6 justify-items-center md:grid-cols-2 sm:grid-cols-1 gap-6 m-10 ">
-          {filter.map((value) => {
-            return (
-              <div className="col mt-3">
-                <img src={value.url} className="img-fluid" alt="image" />
-              </div>
-            );
-          })}
-        </div>
-      </div> */}
+      <Footer />
     </Layout>
   );
 }

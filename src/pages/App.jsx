@@ -4,13 +4,17 @@ import React, { useState } from "react";
 import { RxDotFilled } from "react-icons/rx";
 
 import Layout from "../components/Layout";
+import Footer from "../components/Footer";
 import Card from "../components/Card";
+import Modal from "../components/Modal";
 
 import { images } from "../utils/data";
 import { slides } from "../utils/data";
 
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [showModal, setShowModal] = useState(false);
+  const handleOnClose = () => setShowModal(false);
 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
@@ -27,6 +31,7 @@ function App() {
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex);
   };
+
   return (
     <Layout>
       <div
@@ -41,11 +46,14 @@ function App() {
         </div>
 
         <h1 className="font-bold text-white text-6xl ">Gallery Art</h1>
-        <p className="font-semibold text-rose-700 text-2xl">
+        <p className="font-semibold text-[#FDB827] text-2xl">
           Search our images
         </p>
-        <button className="w-32 h-8 bg-rose-700 rounded-full text-white hover:bg-rose-300">
-          Search
+        <button
+          onClick={() => setShowModal(true)}
+          className="w-32 h-8 bg-[#CF7500] rounded-full text-white hover:bg-[#5e3b0d]"
+        >
+          About
         </button>
 
         <div className="flex justify-center absolute inset-x-0 bottom-0 text-white  hover:text-rose-300 ">
@@ -70,13 +78,13 @@ function App() {
         </div>
       </div>
 
-      <div className="bg-sea min-h-screen bg-fixed bg-no-repeat bg-cover flex flex-row ">
-        <div className="w-1/2 bg-black text-white grid justify-items-center content-center  ">
-          <div className="flex-col w-3/5  ">
-            <h1 className="text-7xl font-bold mb-10">
+      <div className="bg-sea min-h-screen bg-fixed bg-no-repeat bg-cover flex flex-row relative">
+        <div className="w-1/2 bg-black grid justify-items-center content-center  ">
+          <div className="flex-col w-3/5 h-64 absolute lg:top-42 lg:left-40 md:top-48 md:left-32 md:px-10">
+            <h1 className="text-7xl font-bold mb-10  text-[#FDB827] ">
               We can help you make great photos!
             </h1>
-            <p className="text-lg">
+            <p className="text-lg text-[#CF7500]">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Consequuntur, aliquam quisquam error repudiandae earum accusantium
               facere facilis ea perspiciatis nemo quasi optio sit voluptatibus
@@ -95,6 +103,11 @@ function App() {
           ))}
         </div>
       </div>
+      {/* <button onClick={() => setShowModal(true)}>modal</button> */}
+
+      <Modal onClose={handleOnClose} visible={showModal} />
+
+      <Footer />
     </Layout>
   );
 }

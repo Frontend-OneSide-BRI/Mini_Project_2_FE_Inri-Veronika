@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   const [navbar, setNavbar] = useState(false);
+
   return (
-    <nav className=" bg-black shadow sticky top-0">
+    <nav className=" bg-black shadow sticky top-0 ">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -56,20 +57,20 @@ function Navbar() {
             }`}
           >
             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-              <li className="text-white hover:text-rose-600">
+              <li className="text-white hover:text-[#FDB827]">
                 <Link to={"/"}>
                   <p>Home</p>
                 </Link>
               </li>
-              <li className="text-white hover:text-rose-600">
+              <li className="text-white hover:text-[#FDB827]">
                 <Link to={"/gallery"}>
                   <p>Gallery</p>
                 </Link>
               </li>
-              <li className="text-white hover:text-rose-600">
+              <li className="text-white hover:text-[#FDB827]">
                 <a href="#">About </a>
               </li>
-              <li className="text-white hover:text-rose-600">
+              <li className="text-white hover:text-[#FDB827]">
                 <a href="#">Contact </a>
               </li>
             </ul>
